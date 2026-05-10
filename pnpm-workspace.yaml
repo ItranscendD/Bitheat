@@ -1,0 +1,11 @@
+packages:
+  - 'mobile'
+  - 'admin'
+  - 'contracts'
+  - 'shared'
+allowBuilds:
+  esbuild: true
+  keccak: true
+  node-datachannel: true
+  secp256k1: true
+  unrs-resolver: true

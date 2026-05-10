@@ -1,0 +1,27 @@
+{
+  "name": "@bitheat/sync-protocol",
+  "version": "1.0.0",
+  "description": "Lazy Sync Protocol for resilient health records in low-connectivity environments.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "docs": "typedoc --out docs/api src/index.ts"
+  },
+  "keywords": [
+    "sync",
+    "offline-first",
+    "blockchain",
+    "health",
+    "unicef",
+    "celo"
+  ],
+  "author": "Bitheat Team",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "typedoc": "^0.25.0"
+  }
+}

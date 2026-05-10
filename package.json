@@ -1,0 +1,20 @@
+{
+  "name": "bitheat-monorepo",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"pnpm --filter admin dev\" \"pnpm --filter mobile dev\"",
+    "dev:admin": "pnpm --filter admin dev",
+    "dev:mobile": "pnpm --filter mobile dev",
+    "test:all": "pnpm -r test",
+    "build:contracts": "pnpm --filter contracts compile",
+    "build": "pnpm -r run build",
+    "lint": "pnpm -r run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

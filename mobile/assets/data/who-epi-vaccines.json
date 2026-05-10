@@ -1,0 +1,69 @@
+{
+  "vaccines": [
+    {
+      "id": "bcg",
+      "name": "BCG",
+      "doses": 1,
+      "schedule": [
+        { "dose": 1, "age_days": 0 }
+      ]
+    },
+    {
+      "id": "opv",
+      "name": "OPV",
+      "doses": 4,
+      "schedule": [
+        { "dose": 0, "age_days": 0 },
+        { "dose": 1, "age_days": 42 },
+        { "dose": 2, "age_days": 70 },
+        { "dose": 3, "age_days": 98 }
+      ]
+    },
+    {
+      "id": "penta",
+      "name": "Pentavalent",
+      "doses": 3,
+      "schedule": [
+        { "dose": 1, "age_days": 42 },
+        { "dose": 2, "age_days": 70 },
+        { "dose": 3, "age_days": 98 }
+      ]
+    },
+    {
+      "id": "pcv",
+      "name": "PCV",
+      "doses": 3,
+      "schedule": [
+        { "dose": 1, "age_days": 42 },
+        { "dose": 2, "age_days": 70 },
+        { "dose": 3, "age_days": 98 }
+      ]
+    },
+    {
+      "id": "rota",
+      "name": "Rotavirus",
+      "doses": 2,
+      "schedule": [
+        { "dose": 1, "age_days": 42 },
+        { "dose": 2, "age_days": 70 }
+      ]
+    },
+    {
+      "id": "measles",
+      "name": "Measles",
+      "doses": 2,
+      "schedule": [
+        { "dose": 1, "age_days": 270 },
+        { "dose": 2, "age_days": 450 }
+      ]
+    },
+    {
+      "id": "yellow_fever",
+      "name": "Yellow Fever",
+      "doses": 1,
+      "schedule": [
+        { "dose": 1, "age_days": 270 }
+      ]
+    }
+  ]
+}
