@@ -63,19 +63,35 @@ export const TYPOGRAPHY = {
   },
 };
 
+import { Platform } from 'react-native';
+
 export const SHADOWS = {
   sm: {
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.18,
-    shadowRadius: 1.0,
-    elevation: 1,
+    ...Platform.select({
+      web: {
+        boxShadow: '0 1px 2px rgba(0,0,0,0.18)',
+      },
+      default: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.18,
+        shadowRadius: 1.0,
+        elevation: 1,
+      },
+    }),
   },
   md: {
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    ...Platform.select({
+      web: {
+        boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
+      },
+      default: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+      },
+    }),
   },
 };

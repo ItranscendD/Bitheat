@@ -3,7 +3,7 @@
   "private": true,
   "engines": {
     "node": ">=20.0.0",
-    "pnpm": ">=8.0.0"
+    "pnpm": ">=9.0.0"
   },
   "scripts": {
     "dev:admin": "pnpm --filter admin dev",
@@ -14,5 +14,11 @@
     "build:contracts": "pnpm --filter contracts compile",
     "build": "pnpm -r run build",
     "lint": "pnpm -r run lint"
+  },
+  "pnpm": {
+    "overrides": {
+      "uint8arrays": "^5.1.0",
+      "multiformats": "^13.3.0"
+    }
   }
 }

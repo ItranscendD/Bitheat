@@ -2,8 +2,8 @@
   "name": "@bitheat/sync-protocol",
   "version": "1.0.0",
   "description": "Lazy Sync Protocol for resilient health records in low-connectivity environments.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",

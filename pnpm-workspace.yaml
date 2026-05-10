@@ -3,6 +3,7 @@ packages:
   - 'admin'
   - 'contracts'
   - 'shared'
+  - 'packages/*'
 allowBuilds:
   esbuild: true
   keccak: true

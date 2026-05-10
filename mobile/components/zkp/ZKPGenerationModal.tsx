@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Modal, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, Modal, StyleSheet, TouchableOpacity, ActivityIndicator, Platform } from 'react-native';
 import { useTheme } from '@/design/theme';
 import { BitheatText } from '@/components/ui/BitheatText';
 import { BitheatButton } from '@/components/ui/BitheatButton';
@@ -157,10 +157,17 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: 'white',
     borderRadius: 24,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 12,
+    ...Platform.select({
+      web: {
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+      },
+      default: {
+        elevation: 4,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.1,
+        shadowRadius: 12,
+      },
+    }),
   }
 });

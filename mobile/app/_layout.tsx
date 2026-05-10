@@ -1,5 +1,7 @@
 import { Stack } from 'expo-router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Platform } from 'react-native';
+import * as Font from 'expo-font';
 import { 
   useFonts, 
   SpaceGrotesk_700Bold, 
@@ -14,7 +16,12 @@ import { ThemeProvider } from '@/design/theme';
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [loaded, error] = useFonts({
+  // On web, start as true to skip SSR blocking. On native, start false.
+  const [webFontsLoaded, setWebFontsLoaded] = useState(
+    Platform.OS === 'web' ? false : true
+  );
+
+  const [nativeFontsLoaded, error] = useFonts({
     SpaceGrotesk_700Bold,
     SpaceGrotesk_400Regular,
     SpaceGrotesk_500Medium,
@@ -23,12 +30,27 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    if (loaded || error) {
+    if (Platform.OS === 'web') {
+      // On web, load fonts client-side only
+      Font.loadAsync({
+        SpaceGrotesk_700Bold,
+        SpaceGrotesk_400Regular,
+        SpaceGrotesk_500Medium,
+        DMSans_400Regular,
+        SpaceMono_400Regular,
+      }).then(() => setWebFontsLoaded(true));
+    }
+  }, []);
+
+  const isLoaded = Platform.OS === 'web' ? webFontsLoaded : nativeFontsLoaded;
+
+  useEffect(() => {
+    if (isLoaded || error) {
       SplashScreen.hideAsync();
     }
-  }, [loaded, error]);
+  }, [isLoaded, error]);
 
-  if (!loaded && !error) {
+  if (!isLoaded && !error) {
     return null;
   }
 
@@ -43,4 +65,3 @@ export default function RootLayout() {
     </ThemeProvider>
   );
 }
-
